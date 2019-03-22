@@ -64,6 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        Button dbBtn = (Button)findViewById(R.id.dbBtn);
+        dbBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent startIntent = getPackageManager().getLaunchIntentForPackage("com.example.database");
+                if(startIntent != null){
+                    startActivity(startIntent);
+                }
+
+            }
+        });
         //Attempt to launch an activity outside our app
         Button googleBtn = (Button)findViewById(R.id.googleBtn);
         googleBtn.setOnClickListener(new View.OnClickListener() {
